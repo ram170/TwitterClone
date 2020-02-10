@@ -1,0 +1,38 @@
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-3" id = "dummy">
+            <h1> Hey <%=@user.name%>!</h1><br>
+            <h4> See what's everyone talking about</h4>
+            <div class:"btn btn-primary">
+                <%= link_to '<button type="button">Back</button>'.html_safe, @user %>
+            </div>
+        </div>
+    <div class = "col-md-9">
+    <br>
+    <!-- <div class = "Postbox">
+                <%= form_for :post, url: posts_path do |f| %>
+                <%= f.text_field :content, placeholder:"Type something here....", class: "form-control form-control-lg"%>
+                <br>
+                <%= f.submit :Post, class: "btn btn-primary" %>
+                <%end%>
+    </div> -->
+    
+    <div>
+        <hr>
+        <% @posts.reverse.each do |post|%>
+        <% var = User.find(post.user_id).name%>
+        <p><strong>User: </strong><%=var%></p>
+        <p><strong>Post: </strong><%= post.content%></p>
+        <p>Posted <%= time_ago_in_words(post.created_at)%> ago</p>
+        <%= link_to '<button type="button">Like?</button>'.html_safe, posts_show_path %>0
+        <%= link_to '<button type="button">Dislike?</button>'.html_safe, posts_show_path %>0  
+        <%= link_to '<button type="button">Comment something?</button>'.html_safe, posts_show_path %>
+        <!-- <% if(@user.name==var)%>
+        <%= link_to '<button type="button">Edit</button>'.html_safe, posts_show_path %>
+        <%= link_to '<button type="button">Delete</button>'.html_safe, posts_show_path %>
+        <%end%> -->
+
+        <hr>
+        <%end%>
+    </div>
+</div>

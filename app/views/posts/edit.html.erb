@@ -1,0 +1,7 @@
+<div class = "Postbox">
+    <%= form_for @post, url: post_update_path(@post)  do |f| %>
+    <%= f.text_field :content, placeholder:"Type something here....", class: "form-control form-control-lg"%>
+    <br>
+    <%= f.submit :Update, class: "btn btn-primary" %>
+    <%end%>
+</div>

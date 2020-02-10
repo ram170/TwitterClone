@@ -1,0 +1,21 @@
+
+<div class="login">
+    <h4>Welcome! Login here</h4>
+    <%= form_for :login, url: logins_index_path do |f|%>
+    <!-- <%= f.label :username%><br> -->
+    <%= f.text_field :name, placeholder:"username"%><br>
+    <!-- <%= f.label :password%><br> -->
+    <%= f.password_field :password, placeholder: "password"%><br>
+    <p></p>
+    <%= f.submit :Login %>
+    <%end%>
+    <p></p>
+    <%= link_to 'New user?','/users/new'%> 
+</div>
+
+<div class = "Error-message">
+    <% if @temp == 1 %>
+        <h6>Incorrect username or password</h6>
+        <li><%@temp = 0%></li>
+    <%end%>
+</div>

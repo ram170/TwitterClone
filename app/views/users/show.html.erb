@@ -1,0 +1,43 @@
+<!-- <h1>@user.name</h1> -->
+<!-- <%=@user.email%> -->
+
+<!-- <h1>This is working!!!!!!</h1> -->
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-3" id = "dummy">
+            <h1> Welcome <%= @user.name%></h1><br>
+            <h4> Share what's going on in your life with your friends</h4>
+            <div class:"btn btn-primary">
+                <%= link_to '<button type="button">Home</button>'.html_safe, posts_show_path(@user) %>
+                <%= link_to '<button type="button">Post something?</button>'.html_safe, posts_new_path(@user) %> <br>
+                <div style="text-align: center;">
+                    <%= link_to '<button type="button">Logout?</button>'.html_safe, root_path, data: {confirm: "Are you sure?"}%> <br>
+                </div>
+            </div>
+        </div>
+        <div class = "col-md-9">
+            <!-- <br>
+            <div class = "Postbox">
+                <%= form_for :post, url: users_path  do |f| %>
+                <%= f.text_field :name, placeholder:"Type something here....", class: "form-control form-control-lg"%>
+                <br>
+                <%= f.submit :Post, class: "btn btn-primary" %>
+                <%end%>
+            </div>
+            <br>
+            <br> -->
+            <h1>Your Posts</h1>
+            <hr>
+            <% @posts.reverse.each do |post|%>
+            <p><strong>User: </strong><%= @user.name%></p>
+            <p><strong>Post: </strong><%= post.content%></p> 
+            <p><p>Posted <%= time_ago_in_words(post.created_at)%> ago</p></p>
+            <p>
+                <%= link_to '<button type="button">Edit</button>'.html_safe, post_edit_path(post) %>
+                <%= link_to '<button type="button">Delete</button>'.html_safe, post_destroy_path(post)%>
+            </p>
+            <hr>
+            <%end%>
+        </div>
+    </div>
+</div>

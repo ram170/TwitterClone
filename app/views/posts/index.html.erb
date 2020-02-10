@@ -1,0 +1,29 @@
+<!-- <h1>This is working!!!!!!</h1> -->
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-3" id = "dummy">
+            <h1> Welcome <%= @user.name%></h1><br>
+            <h4> Share what's going on in your life with your friends</h4>
+        </div>
+        <div class = "col-md-9">
+            <br>
+            <div class = "Postbox">
+                <%= form_for :post, url: posts_index_path  do |f| %>
+                <%= f.text_field :name, placeholder:"Type something here....", class: "form-control form-control-lg"%>
+                <br>
+                <%= f.submit :Post, class: "btn btn-primary" %>
+                <%end%>
+            </div>
+            <br>
+            <br>
+            <!-- <%= debug @post.length%> -->
+            <% @post.each do |show|%>
+            <!-- <%= debug show.content %> -->
+            <!-- <p>starts here</p> -->
+            <%= show.content%>
+            <!-- <p>ends here</p> -->
+            <%end%>
+            <!-- <p>hi</p> -->
+        </div>
+    </div>
+</div>

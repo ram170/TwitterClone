@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitterweb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+  <div class="topnav">
+    <!-- <div class = "logo-image">
+        <img src="http://pngimagesfree.com/LOGO/T/Twitter/Twitter-Logo_PNG.png">
+    </div> -->
+    <a href="/users">Welcome to Bwitter</a>
+    <a href="https://about.twitter.com/en_gb.html" id="ok" target="_blank">About us</a>
+    <a href="https://www.freshworks.com/" target="_blank">What's trending?</a>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>

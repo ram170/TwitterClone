@@ -26,3 +26,8 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+*Read me starts here*
+
+A simple web app created using ruby on rails. Login authentication and sign-up page is done. Password field is not encrypted yet. You can login and post. Everyone can see every post. Like and comment feature will be added soon.
